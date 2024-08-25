@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col justify-between">
+    <!--header-->
+    <h1 class="text-zinc-50 text-2xl md:text-4xl bg-cyan-200 w-full h-24 flex justify-center items-center">
+        Weather Broadcast
+    </h1>
+
+    <!--error message-->
+    <div id="error-message" class="hidden text-red-500 text-center mt-4 text-2xl bg-black"></div>
+
+    <div class="flex flex-col items-center justify-center flex-grow px-4 md:px-0">
+        <div class="flex flex-col items-center">
+            <div class="flex flex-col md:flex-row justify-center items-center">
+                <input
+                    class="w-full md:w-72 border border-solid border-cyan-200 px-3 py-2 mt-4 rounded-md"
+                    type="text"
+                    placeholder="Search city"
+                    id="search-city"
+                >
+                <button type="button" id="search-btn"
+                    class="bg-cyan-200 text-zinc-50 border-solid ml-0 md:ml-4 mt-4 md:mt-0 px-4 py-2 rounded-md hover:bg-cyan-300 focus:outline-none">
+                    Search
+                </button>
+            </div>
+
+            <p class="text-center mt-3 md:mt-4">----------or----------</p>
+
+            <button type="button" onclick="getCurrentLocation()"
+                class="bg-slate-200 text-cyan-700 border-solid mt-4 px-4 py-2 rounded-md hover:bg-slate-300 focus:outline-none">
+                Use current Location
+            </button>
+        </div>
+    </div>
+
+    <div class="flex flex-col items-center mt-4">
+        <select id="recent-cities" class="hidden border border-cyan-200 px-3 py-2 rounded-md">
+            <option value="">Select a recently searched city</option>
+        </select>
+    </div>
+
+    <!--weather details-->
+    <div class="flex justify-center mb-8 mt-8 px-4 md:px-0" id="weather-details">
+        <!--weather details content will be injected here-->
+    </div>
+
+    <!--5 day weather forecast container-->
+    <div class="flex flex-wrap justify-evenly mb-6 m-auto px-4 md:px-0" id="fivedayweather">
+        <!--5 day weather forecast content will be injected here-->
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
